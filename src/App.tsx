@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,26 +16,13 @@ import ScrollProgress from './components/ScrollProgress';
 import VisitorCounter from './components/VisitorCounter';
 import FormAnalytics from './components/FormAnalytics';
 import ExperienceManager from './components/ExperienceManager';
-import AdminLogin from './components/AdminLogin';
 
 function App() {
-  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
-
-  useEffect(() => {
-    // Check if admin is already logged in
-    const loggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
-    setIsAdminLoggedIn(loggedIn);
-  }, []);
 
   return (
     <div className="App">
       <ScrollProgress />
       <VisitorCounter />
-      <AdminLogin 
-        onLoginSuccess={() => setIsAdminLoggedIn(true)}
-        isLoggedIn={isAdminLoggedIn}
-        onLogout={() => setIsAdminLoggedIn(false)}
-      />
       <Navbar />
       <Hero />
       <About />
@@ -52,7 +38,6 @@ function App() {
       <Footer />
       <ScrollToTop />
       <FormAnalytics />
-      {isAdminLoggedIn && <ExperienceManager />}
     </div>
   );
 }
