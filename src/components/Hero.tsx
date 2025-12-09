@@ -3,6 +3,7 @@ import { ChevronDown, Download } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero: React.FC = () => {
+  // Fixed deployment
   return (
     <section id="home" className="min-h-screen flex items-center justify-center gradient-bg text-white relative overflow-hidden">
       <div className="absolute inset-0">
